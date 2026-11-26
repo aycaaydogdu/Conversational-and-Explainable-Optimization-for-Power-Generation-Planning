@@ -1,0 +1,54 @@
+{
+  "_aciklama": "Sentetik 5 bölgeli Türkiye modeli, yarın 19:00 (tek saat). Bölge talepleri, toplam kapasiteler ve hat limitleri prototiple aynıdır; santral kırılımı ve maliyetler örnek değerlerdir. Birimler: MW, TL/MWh.",
+  "saat": "19:00",
+  "bolgeler": [
+    {"id": "MAR", "ad": "Marmara",      "talep": 17500},
+    {"id": "EGE", "ad": "Ege",          "talep": 8500},
+    {"id": "AKD", "ad": "Akdeniz",      "talep": 6500},
+    {"id": "ICA", "ad": "İç Anadolu",   "talep": 7500},
+    {"id": "DOG", "ad": "Doğu Anadolu", "talep": 6000}
+  ],
+  "santraller": [
+    {"id": "MAR_RES",   "bolge": "MAR", "tip": "rüzgâr",        "kapasite": 2000,  "maliyet": 0},
+    {"id": "MAR_ITHK",  "bolge": "MAR", "tip": "ithal kömür",   "kapasite": 5000,  "maliyet": 2350},
+    {"id": "MAR_DGKC",  "bolge": "MAR", "tip": "doğalgaz KÇ",   "kapasite": 9500,  "maliyet": 2800},
+    {"id": "MAR_GT",    "bolge": "MAR", "tip": "doğalgaz GT",   "kapasite": 2500,  "maliyet": 3600},
+
+    {"id": "EGE_RES",   "bolge": "EGE", "tip": "rüzgâr",        "kapasite": 2500,  "maliyet": 0},
+    {"id": "EGE_JES",   "bolge": "EGE", "tip": "jeotermal",     "kapasite": 1000,  "maliyet": 600},
+    {"id": "EGE_LINY",  "bolge": "EGE", "tip": "linyit",        "kapasite": 2500,  "maliyet": 2200},
+    {"id": "EGE_DGKC",  "bolge": "EGE", "tip": "doğalgaz KÇ",   "kapasite": 3500,  "maliyet": 2850},
+    {"id": "EGE_GT",    "bolge": "EGE", "tip": "doğalgaz GT",   "kapasite": 1000,  "maliyet": 3650},
+
+    {"id": "AKD_HES",   "bolge": "AKD", "tip": "hidro",         "kapasite": 2000,  "maliyet": 1100},
+    {"id": "AKD_RES",   "bolge": "AKD", "tip": "rüzgâr",        "kapasite": 500,   "maliyet": 0},
+    {"id": "AKD_ITHK",  "bolge": "AKD", "tip": "ithal kömür",   "kapasite": 2500,  "maliyet": 2400},
+    {"id": "AKD_DGKC",  "bolge": "AKD", "tip": "doğalgaz KÇ",   "kapasite": 2500,  "maliyet": 2900},
+    {"id": "AKD_GT",    "bolge": "AKD", "tip": "doğalgaz GT",   "kapasite": 500,   "maliyet": 3700},
+
+    {"id": "ICA_RES",   "bolge": "ICA", "tip": "rüzgâr",        "kapasite": 500,   "maliyet": 0},
+    {"id": "ICA_LINY",  "bolge": "ICA", "tip": "linyit",        "kapasite": 2800,  "maliyet": 2250},
+    {"id": "ICA_DGKC",  "bolge": "ICA", "tip": "doğalgaz KÇ",   "kapasite": 2500,  "maliyet": 2950},
+    {"id": "ICA_GT",    "bolge": "ICA", "tip": "doğalgaz GT",   "kapasite": 1000,  "maliyet": 3700},
+
+    {"id": "DOG_HES",   "bolge": "DOG", "tip": "hidro",         "kapasite": 10500, "maliyet": 1150},
+    {"id": "DOG_LINY",  "bolge": "DOG", "tip": "linyit",        "kapasite": 2000,  "maliyet": 2100}
+  ],
+  "hatlar": [
+    {"id": "DOG-ICA", "a": "DOG", "b": "ICA", "kapasite": 4000},
+    {"id": "ICA-MAR", "a": "ICA", "b": "MAR", "kapasite": 5000},
+    {"id": "EGE-MAR", "a": "EGE", "b": "MAR", "kapasite": 3000},
+    {"id": "AKD-ICA", "a": "AKD", "b": "ICA", "kapasite": 2500},
+    {"id": "EGE-AKD", "a": "EGE", "b": "AKD", "kapasite": 2000}
+  ],
+  "onarim_kaynaklari": {
+    "_aciklama": "Model çözümsüz olduğunda devreye alınabilecek esneklikler. Normal çözümde kapalıdır.",
+    "soguk_yedek": [
+      {"id": "MAR_SOGUK", "bolge": "MAR", "kapasite": 1000, "maliyet": 4500},
+      {"id": "ICA_SOGUK", "bolge": "ICA", "kapasite": 500,  "maliyet": 4600}
+    ],
+    "talep_katilimi": {"oran": 0.03, "maliyet": 6000},
+    "hat_acil_kapasite": {"oran": 0.10, "maliyet": 800},
+    "yuk_atma": {"maliyet": 25000}
+  }
+}

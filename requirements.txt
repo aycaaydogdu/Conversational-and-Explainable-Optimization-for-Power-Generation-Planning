@@ -1,0 +1,8 @@
+highspy>=1.7
+ortools>=9.10
+numpy>=1.26
+scipy>=1.11
+pytest>=7
+# GPU (isteğe bağlı, CUDA sürümüne göre biri):
+#   pip install --extra-index-url=https://pypi.nvidia.com 'cuopt-cu13==26.6.*'
+#   pip install --extra-index-url=https://pypi.nvidia.com 'cuopt-cu12==26.2.*'
